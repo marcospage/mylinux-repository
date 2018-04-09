@@ -1,0 +1,11 @@
+[Unit]
+Description=Start Mysql5.7.21 Server
+Documentation=https://dev.mysql.com/doc/refman/5.7/en/
+
+[Service]
+Type=simple
+PIDFile=/home/mysql/mysqldata/mysqlpidfile.pid
+ExecStart=/home/mysql/mysqlsoft/bin/mysqld_safe --basedir=/home/mysql/mysqlsoft --datadir=/home/mysql/mysqldata --plugin-dir=/home/mysql/mysqlsoft/lib/plugin --user=mysql --log-error=/home/mysql/mysqldata/mysqlerror.log --pid-file=/home/mysql/mysqldata/mysqlpidfile.pid --socket=/tmp/mysql.sock
+
+[Install]
+WantedBy=multi-user.target
